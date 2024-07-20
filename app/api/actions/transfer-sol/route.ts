@@ -23,6 +23,11 @@ export const POST = async (req: Request) => {
     try {
         const body: ActionPostRequest = await req.json();
 
+        // Validate the account address
+        if (!body.account || body.account.length !== 44) {  // Solana addresses are 44 characters long
+            throw new Error("Invalid wallet address");
+        }
+
         // Add the user's wallet to the raffle entries array
         raffleEntries.push(body.account);
 
