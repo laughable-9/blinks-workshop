@@ -1,4 +1,5 @@
-# 🏆Trophy - The safe way to giveaway 
+# 🏆Trophy 
+The safe way to giveaway 
 
 ### Project Overview  
 *“Privacy is not something that I'm merely entitled to, it's an absolute prerequisite.”* — Marlon Brando  
