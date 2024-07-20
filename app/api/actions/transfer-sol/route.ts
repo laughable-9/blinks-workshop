@@ -1,6 +1,9 @@
 import { ACTIONS_CORS_HEADERS, ActionGetResponse, ActionPostRequest, ActionPostResponse, createPostResponse } from "@solana/actions";
 import { transferSolTransaction } from "./transaction";
 
+// Create a mutable array to store raffle entries
+let raffleEntries: string[] = [];
+
 export const GET = async (req: Request) => {
     const payload: ActionGetResponse = {
         title: "Join Kyle's Giveaway",
@@ -20,8 +23,11 @@ export const POST = async (req: Request) => {
     try {
         const body: ActionPostRequest = await req.json();
 
-        // Log the user's wallet/public key
-        console.log("User's wallet/public key:", body.account);
+        // Add the user's wallet to the raffle entries array
+        raffleEntries.push(body.account);
+
+        // Log the entire raffle entries array
+        console.log("Raffle Entries:", raffleEntries);
 
         const amountInLamports = Math.floor(0.0001 * 1_000_000_000); // Convert SOL to Lamports
         
