@@ -10,7 +10,7 @@ const MAX_ENTRIES = 3;
 export const GET = async (req: Request) => {
     const payload: ActionGetResponse = {
         title: "Join Kyle's Giveaway",
-        icon: "https://i.imgur.com/grf925K.jpeg",
+        icon: "https://i.imgur.com/fgBAK9K.png",
         description: "It's your lucky day today! 🏆",
         label: "Enter Giveaway"
     }
