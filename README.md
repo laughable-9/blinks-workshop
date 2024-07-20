@@ -47,4 +47,9 @@ The hackathon was a great learning experience for our team. We explored new prog
 11. **Multiple Winners for Giveaways**.  
 
 ### Snapshots  
-*(Include any screenshots or relevant images here.)*  
+![website](https://github.com/user-attachments/assets/54acfd7d-e3b6-4dea-a00d-257297435fbb)
+![Group 565](https://github.com/user-attachments/assets/27619796-f16a-4b14-9264-a3a8471ed993)
+![Group 566](https://github.com/user-attachments/assets/1f370be1-db15-46b4-bf28-953bfe019e9a)
+![Group 567](https://github.com/user-attachments/assets/e4fda66f-f3a1-46ad-ad40-7bbce0de2256)
+![web](https://github.com/user-attachments/assets/6a56bdbf-c01c-429f-8f9a-7b365e6755b8)
+
