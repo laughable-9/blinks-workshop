@@ -4,14 +4,26 @@ import { transferSolTransaction } from "./transaction";
 // Create a mutable array to store raffle entries
 const raffleEntries: string[] = [];
 
+// Variable to store the winner's address
+let winnerAddress: string | null = null;
+
 // Set the maximum number of entries allowed
 const MAX_ENTRIES = 3;
 
 export const GET = async (req: Request) => {
+    let title = "Join Kyle's Giveaway";
+    let description = "It's your lucky day today! 🏆🍀";
+
+    // Check if a winner has been selected
+    if (winnerAddress) {
+        title = `The winner is ${winnerAddress}`;
+        description = "Congratulations to this lucky participant! 🏆";
+    }
+
     const payload: ActionGetResponse = {
-        title: "Join Kyle's Giveaway",
+        title,
         icon: "https://i.imgur.com/InBPg5a.png",
-        description: "It's your lucky day today! 🏆🍀",
+        description,
         label: "Enter Giveaway"
     }
 
@@ -45,7 +57,8 @@ export const POST = async (req: Request) => {
             console.log(`The index selected is: ${winnerIndex}`);
 
             // Log the winner's wallet address
-            console.log(`The winner of the raffle is: ${raffleEntries[winnerIndex]}`);
+            winnerAddress = raffleEntries[winnerIndex];
+            console.log(`The winner of the raffle is: ${winnerAddress}`);
         } else if (raffleEntries.includes(body.account)) {
             console.log(`Wallet address already entered: ${body.account}`);
         } else {
