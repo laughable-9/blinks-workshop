@@ -13,18 +13,23 @@ const MAX_ENTRIES = 3;
 export const GET = async (req: Request) => {
     let title = "Join Kyle's Giveaway";
     let description = "It's your lucky day today! 🏆🍀";
+    let label = "Enter Giveaway";
+    let disabled = false;
 
     // Check if a winner has been selected
     if (winnerAddress) {
         title = `The winner is ${winnerAddress}`;
         description = "Congratulations to this lucky participant! 🏆";
+        label = "Giveaway ended";
+        disabled = true;
     }
 
     const payload: ActionGetResponse = {
         title,
         icon: "https://i.imgur.com/InBPg5a.png",
         description,
-        label: "Enter Giveaway"
+        label,
+        disabled,
     }
 
     return Response.json(payload, {
