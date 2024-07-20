@@ -35,8 +35,14 @@ export const POST = async (req: Request) => {
         if (raffleEntries.length >= MAX_ENTRIES) {
             console.log("Raffle has reached maximum capacity, selecting a winner");
 
+            // Print the entire raffle entries array
+            console.log("Raffle Entries:", raffleEntries);
+
             // Generate a random number between 0 and the highest index of the array
             const winnerIndex = Math.floor(Math.random() * raffleEntries.length);
+
+            // Print the random index selected
+            console.log(`The index selected is: ${winnerIndex}`);
 
             // Log the winner's wallet address
             console.log(`The winner of the raffle is: ${raffleEntries[winnerIndex]}`);
