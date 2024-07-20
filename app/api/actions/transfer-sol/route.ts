@@ -2,7 +2,7 @@ import { ACTIONS_CORS_HEADERS, ActionGetResponse, ActionPostRequest, ActionPostR
 import { transferSolTransaction } from "./transaction";
 
 // Create a mutable array to store raffle entries
-let raffleEntries: string[] = [];
+const raffleEntries: string[] = [];
 
 // Set the maximum number of entries allowed
 const MAX_ENTRIES = 3;
@@ -33,7 +33,13 @@ export const POST = async (req: Request) => {
 
         // Check if the raffle has reached maximum capacity
         if (raffleEntries.length >= MAX_ENTRIES) {
-            console.log("Raffle has reached maximum capacity");
+            console.log("Raffle has reached maximum capacity, selecting a winner");
+
+            // Generate a random number between 0 and the highest index of the array
+            const winnerIndex = Math.floor(Math.random() * raffleEntries.length);
+
+            // Log the winner's wallet address
+            console.log(`The winner of the raffle is: ${raffleEntries[winnerIndex]}`);
         } else if (raffleEntries.includes(body.account)) {
             console.log(`Wallet address already entered: ${body.account}`);
         } else {
