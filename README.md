@@ -22,10 +22,11 @@ This process ensures a seamless and secure one-click participation in giveaways.
 Utilizing Solana action, we create a use case of Blink and develop the project using **TypeScript**, **Next.js**, **Node.js**, and **Vercel** for deployment. We also use **Solana Explorer** to test our project and check how many participants are currently in the giveaway.  
 
 ### Challenges  
-*(Describe the challenges faced during the development of the project here.)*  
+We have a diverse skillset, with strengths in UI/UX and other programming areas. However, our experience with TypeScript, the primary language for this project, is limited, especially for some newer programmers. This necessitates additional support to ensure everyone can effectively contribute. Additionally, balancing this project with existing commitments like academic workloads and other events presents a time constraint. Despite these hurdles, the team remains dedicated and committed to attending the build station and actively participating in the hackathon.
 
 ### What we learned  
-*(Explain what you learned from working on the project here.)*  
+The hackathon was a great learning experience for our team. We explored new programming languages for us, TypeScript and Tailwind CSS, and used them to build a Blink. We familiarized ourselves with Git, as well as how to make get and post requests. This hands-on project helped us solidify our understanding of these languages. We also honed our teamwork skills by sharing ideas, splitting tasks, and collaborating effectively. The hackathon provided a platform for connecting with others. We talked to fellow participants and learned from their experiences. The time constraints pushed us to be more selective with our ideas, prioritizing features achievable within the timeframe.
+  
 
 ### What's next for Trophy  
 1. **Create Giveaway on Website**: Blink depends on the ID of the giveaway.  
