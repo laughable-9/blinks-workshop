@@ -19,6 +19,10 @@ export const OPTIONS = GET;
 export const POST = async (req: Request) => {
     try {
         const body: ActionPostRequest = await req.json();
+
+        // Log the user's wallet/public key
+        console.log("User's wallet/public key:", body.account);
+
         const amountInLamports = Math.floor(0.0001 * 1_000_000_000); // Convert SOL to Lamports
         
         if (amountInLamports <= 0) {
