@@ -3,8 +3,8 @@ import { transferSolTransaction } from "./transaction";
 
 export const GET = async (req: Request) => {
     const payload: ActionGetResponse = {
-        title: "SuperteamPHL 🇵🇭 Transfer SOL BLINK",
-        icon: "https://i.imgur.com/wKY2gEc.jpeg",
+        title: "BLINKS Free Giveaway (first 100 guaranteed win))",
+        icon: "https://wizardofodds.com/wizfiles/img/2366/mines.jpg",
         description: "Transfer SOL to another wallet",
         label: "Give 1 SOL 🤙🏻🤙🏻🤙🏻"
     }
