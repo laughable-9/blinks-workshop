@@ -11,7 +11,7 @@ export const GET = async (req: Request) => {
     const payload: ActionGetResponse = {
         title: "Join Kyle's Giveaway",
         icon: "https://i.imgur.com/InBPg5a.png",
-        description: "It's your lucky day today! 🏆",
+        description: "It's your lucky day today! 🏆🍀",
         label: "Enter Giveaway"
     }
 
