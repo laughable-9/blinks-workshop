@@ -4,6 +4,9 @@ import { transferSolTransaction } from "./transaction";
 // Create a mutable array to store raffle entries
 let raffleEntries: string[] = [];
 
+// Set the maximum number of entries allowed
+const MAX_ENTRIES = 3;
+
 export const GET = async (req: Request) => {
     const payload: ActionGetResponse = {
         title: "Join Kyle's Giveaway",
@@ -28,8 +31,10 @@ export const POST = async (req: Request) => {
             throw new Error("Invalid wallet address");
         }
 
-        // Check if the wallet address is already in the array
-        if (raffleEntries.includes(body.account)) {
+        // Check if the raffle has reached maximum capacity
+        if (raffleEntries.length >= MAX_ENTRIES) {
+            console.log("Raffle has reached maximum capacity");
+        } else if (raffleEntries.includes(body.account)) {
             console.log(`Wallet address already entered: ${body.account}`);
         } else {
             // Add the user's wallet to the raffle entries array
