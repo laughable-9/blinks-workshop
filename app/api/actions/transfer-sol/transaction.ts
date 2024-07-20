@@ -3,25 +3,19 @@ import { Connection, LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction, cl
 type TransferSolTransactionParam = {
     from: string,
     amount: number,
-    // to: string
 }
 
 export const transferSolTransaction = async (params: TransferSolTransactionParam): Promise<Transaction> => {
     const { from, amount } = params;
 
-    const fromPubkey = new PublicKey(from)
-    const toPubkey = new PublicKey('5MaVSc3pAWv6XLYndqeMLd4HNp5smEe4xrnvq94KxEPu'); // static receiver
+    const fromPubkey = new PublicKey(from);
+    const toPubkey = new PublicKey('DhyF27S5YSzeHgTgtY5cjDu3BNX2cVsHQpz2bsgDPnkX'); // static receiver
 
     const connection = new Connection(
         process.env.SOLANA_RPC! || clusterApiUrl("devnet"),
     );
 
-    const minimumBalance = await connection.getMinimumBalanceForRentExemption(
-        0, // note: simple accounts that just store native SOL have `0` bytes of data
-    );
-    if (amount * LAMPORTS_PER_SOL < minimumBalance) {
-        throw `account may not be rent exempt: ${toPubkey.toBase58()}`;
-    }
+    const lamports = amount; // amount is already in lamports
 
     const transaction = new Transaction();
     transaction.feePayer = fromPubkey;
@@ -30,7 +24,7 @@ export const transferSolTransaction = async (params: TransferSolTransactionParam
         SystemProgram.transfer({
             fromPubkey: fromPubkey,
             toPubkey: toPubkey,
-            lamports: amount * LAMPORTS_PER_SOL,
+            lamports: lamports,
         }),
     );
 
