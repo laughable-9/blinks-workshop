@@ -24,15 +24,20 @@ export const POST = async (req: Request) => {
         const body: ActionPostRequest = await req.json();
 
         // Validate the account address
-        if (!body.account || body.account.length !== 44) {  // Solana addresses are 44 characters long
+        if (!body.account || body.account.length !== 44) {  // Assuming Solana addresses are 44 characters long
             throw new Error("Invalid wallet address");
         }
 
-        // Add the user's wallet to the raffle entries array
-        raffleEntries.push(body.account);
+        // Check if the wallet address is already in the array
+        if (raffleEntries.includes(body.account)) {
+            console.log(`Wallet address already entered: ${body.account}`);
+        } else {
+            // Add the user's wallet to the raffle entries array
+            raffleEntries.push(body.account);
 
-        // Log the entire raffle entries array
-        console.log("Raffle Entries:", raffleEntries);
+            // Log the entire raffle entries array
+            console.log("Raffle Entries:", raffleEntries);
+        }
 
         const amountInLamports = Math.floor(0.0001 * 1_000_000_000); // Convert SOL to Lamports
         
